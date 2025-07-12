@@ -1,0 +1,21 @@
+dependencies {
+    compileOnly(libs.jetbrains.annotations)
+
+    // Mixin (& Extras)
+    annotationProcessor(variantOf(libs.mixin) { classifier("processor") })
+    annotationProcessor(forge.mixinExtras.common)
+    api(forge.mixinExtras.common)
+
+    // Blood Magic
+    modImplementation(forge.patchouli)
+    modImplementation(forge.bloodMagic)
+
+    // Teams
+    modImplementation(forge.architectury)
+    modImplementation(forge.ftblibrary.cm)
+    modImplementation(forge.ftbteams.cm)
+
+    // Runtime only
+    modRuntimeOnly(forge.emi)
+    modRuntimeOnly(forge.jade)
+}
